@@ -1,7 +1,12 @@
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.links');
+const button  =document.querySelectorAll('.dropdown');
+
+
+
 
 const navSlide = () => {
+  
     burger.addEventListener('click',() => {
         //toggle nav
         nav.classList.toggle('nav-active');
@@ -13,10 +18,14 @@ const navSlide = () => {
             document.body.style.backgroundColor = "hsl(0, 0%, 98%)";
         }
     });
-   
+
+    // dropdown of sublinks
+    button.forEach((btn,event)=>{
+        btn.addEventListener('click',()=>{
+            btn.classList.toggle('active');
+        });
+    });
+    
 }
 
 navSlide();
-// burger.addEventListener('click',()=>{
-//     burger.classList.toggle('toggle');
-// })

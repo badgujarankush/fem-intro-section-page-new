@@ -107,6 +107,9 @@ a:hover{
 .dropdown:hover .dropdown-content{
     display: block;
 }
+.dropdown.active .dropdown-content{
+    display: block;
+}
 .btns {
 position: absolute;
   display: block;
@@ -235,10 +238,7 @@ button{
   .mobile {
     display: none;
   }
-  @media screen and (max-width:46.5rem) {
-      
-  }
-
+ 
 
   @media screen and (max-width:46rem) {
 
@@ -257,21 +257,11 @@ button{
         margin-bottom: 2rem;
           
       }
+
+      .navbar h1{
+          font-size: 1.5rem;
+      }
       .links{
-          /* z-index: 2;
-          position: absolute;
-          right: 0;
-          top: 5vh;
-          width: 50%;
-          transform: translateX(100%);
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
-          justify-content: flex-start;
-          transition: transform 0.5s ease-in;
-          padding: 1rem;
-          background-color: hsl(0, 0%, 98%); */
 
           z-index: 2;
           position: absolute;
@@ -303,9 +293,6 @@ button{
         position: relative;
           display: flex;
           flex-direction: column;
-          /* float:none; */
-          /* right: 0; */
-          /* top:0; */
           transform: none;
           background-color: hsl(0, 0%, 98%);
           padding-right: 1rem;
@@ -326,7 +313,11 @@ button{
             width: 100%;
             background-color: hsl(0, 0%, 98%);
         }
-        .dropbtn:hover .dropdown-content{
+        .dropdown:hover .dropdown-content{
+            display: none;
+            flex-direction: column;
+        }
+        .dropdown.active .dropdown-content{
             display: flex;
             flex-direction: column;
         }
@@ -400,6 +391,9 @@ button{
           .mobile {
             display: block;
           }
+          .attribution{
+              margin-top: 2rem;
+          }
 }
 
 .nav-active{
@@ -421,3 +415,6 @@ button{
 .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
 }
+
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
